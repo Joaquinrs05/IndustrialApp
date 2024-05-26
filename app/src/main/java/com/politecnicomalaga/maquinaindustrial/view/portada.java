@@ -1,10 +1,13 @@
-package com.politecnicomalaga.maquinaindustrial;
+package com.politecnicomalaga.maquinaindustrial.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.politecnicomalaga.maquinaindustrial.MainActivity;
+import com.politecnicomalaga.maquinaindustrial.R;
 
 public class portada extends AppCompatActivity {
     @Override
