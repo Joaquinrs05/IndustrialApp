@@ -13,7 +13,6 @@ import com.politecnicomalaga.maquinaindustrial.model.PreguntaRespuestas;
 
 public class MainActivity extends AppCompatActivity {
     private PreguntaRespuestas pregunta1, pregunta2, pregunta3, pregunta4;
-    private StringConst stringConst;
     private Activity thisAct;
 
 
@@ -39,17 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.quiz);
-
-        thisAct = this;
-
-        pregunta1 = new PreguntaRespuestas(1);
-        pregunta2 = new PreguntaRespuestas(1);
-        pregunta3 = new PreguntaRespuestas(1);
-        pregunta4 = new PreguntaRespuestas(1);
-
+        
         TextView pregunta = (TextView) findViewById(R.id.pregunta);
         Button miBotonA = (Button) findViewById(R.id.botonA);
         Button miBotonB = (Button) findViewById(R.id.botonB);
@@ -58,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
         Button miBotonNext = (Button) findViewById(R.id.next);
 
         miBotonNext.callOnClick();
+
+        thisAct = this;
+
+        pregunta1 = new PreguntaRespuestas(1);
+        pregunta2 = new PreguntaRespuestas(1);
+        pregunta3 = new PreguntaRespuestas(1);
+        pregunta4 = new PreguntaRespuestas(1);
 
         miBotonA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,9 +90,7 @@ public class MainActivity extends AppCompatActivity {
         miBotonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                pregunta.setText(""); //stringConst.getPregunta1()
-
+                pregunta.setText(StringConst.pregunta1);
             }
         });
 
