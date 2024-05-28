@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.politecnicomalaga.maquinaindustrial.MainActivity;
 import com.politecnicomalaga.maquinaindustrial.R;
 
-public class portada extends AppCompatActivity {
+public class Portada extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,7 @@ public class portada extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Cuando se hace clic en el botón de la portada, iniciar la actividad principal
-                Intent intent = new Intent(portada.this, MainActivity.class);
+                Intent intent = new Intent(Portada.this, MainActivity.class);
                 startActivity(intent);
                 finish(); // Cerrar la actividad de la portada para que no se pueda volver atrás
             }
@@ -31,7 +31,7 @@ public class portada extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Cuando se hace clic en el botón de la portada, iniciar la actividad de informacion
-                Intent intent = new Intent(portada.this, informacion.class);
+                Intent intent = new Intent(Portada.this, Informacion.class);
                 startActivity(intent);
             }
         });

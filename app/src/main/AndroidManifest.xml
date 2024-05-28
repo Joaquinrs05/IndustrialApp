@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaquinaIndustrial"
         tools:targetApi="31">
-        <activity android:name=".view.portada"
+        <activity android:name=".view.Portada"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.informacion"></activity>
+        <activity android:name=".view.Informacion"></activity>
     </application>
 
 </manifest>
