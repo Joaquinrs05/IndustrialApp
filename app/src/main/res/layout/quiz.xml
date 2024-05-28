@@ -46,25 +46,29 @@
             android:id="@+id/botonA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button A" />
+            android:text="Opción A"
+            android:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/botonB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button B" />
+            android:text="Opción B"
+            android:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/botonC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button C" />
+            android:text="Opción C"
+            android:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/botonD"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button D" />
+            android:text="Opción D"
+            android:backgroundTint="@color/black" />
     </LinearLayout>
 
     <Button
@@ -75,6 +79,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

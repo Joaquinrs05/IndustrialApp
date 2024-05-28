@@ -1,12 +1,6 @@
 package com.politecnicomalaga.maquinaindustrial.data;
 
 public class StringConst {
-
-    /*1º foto de la estructura, nombre pregunta: EN qué año se construyó
-    2º Ponemos la foto, que digan el nombre el año aparece
-    3º que señale la foto  dandole el nombre (quizas el año le damos tambien)
-    4º Cual fue el proposito original de esta fabrica*/
-
     public static String pregunta1 = "¿En qué año se construyó Pisos Picados?";
 
     public static String respuesta1A = "1";
