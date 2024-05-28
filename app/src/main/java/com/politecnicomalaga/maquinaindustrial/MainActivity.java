@@ -6,13 +6,17 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.politecnicomalaga.maquinaindustrial.data.StringConst;
 import com.politecnicomalaga.maquinaindustrial.model.PreguntaRespuestas;
+import com.politecnicomalaga.maquinaindustrial.view.Resultado;
 
 public class MainActivity extends AppCompatActivity {
     private PreguntaRespuestas pregunta1, pregunta2, pregunta3, pregunta4;
     private static int cont;
+    private static int res;
+
 
     public static class portada extends AppCompatActivity {
         @Override
@@ -47,11 +51,18 @@ public class MainActivity extends AppCompatActivity {
         Button miBotonC = (Button) findViewById(R.id.botonC);
         Button miBotonD = (Button) findViewById(R.id.botonD);
         Button miBotonNext = (Button) findViewById(R.id.next);
+        ImageView miImagen = (ImageView) findViewById(R.id.imagen);
         cont = 1;
+
         pregunta.setText(StringConst.pregunta1);
-        pregunta1 = new PreguntaRespuestas(1);
-        pregunta2 = new PreguntaRespuestas(1);
-        pregunta3 = new PreguntaRespuestas(1);
+        miBotonA.setText(StringConst.respuesta1A);
+        miBotonB.setText(StringConst.respuesta1B);
+        miBotonC.setText(StringConst.respuesta1C);
+        miBotonD.setText(StringConst.respuesta1D);
+        miImagen.setImageResource(R.drawable.guindos);
+        pregunta1 = new PreguntaRespuestas(2);
+        pregunta2 = new PreguntaRespuestas(3);
+        pregunta3 = new PreguntaRespuestas(3);
         pregunta4 = new PreguntaRespuestas(1);
 
         miBotonA.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(acertada) {
                     miBotonA.setBackgroundColor(Color.GREEN);
+                    res++;
                 } else {
                     miBotonA.setBackgroundColor(Color.RED);
                 }
@@ -90,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(acertada) {
                     miBotonB.setBackgroundColor(Color.GREEN);
+                    res++;
                 } else {
                     miBotonB.setBackgroundColor(Color.RED);
                 }
@@ -111,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(acertada) {
                     miBotonC.setBackgroundColor(Color.GREEN);
+                    res++;
                 } else {
                     miBotonC.setBackgroundColor(Color.RED);
                 }
@@ -132,31 +146,55 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(acertada) {
                     miBotonD.setBackgroundColor(Color.GREEN);
+                    res++;
                 } else {
                     miBotonD.setBackgroundColor(Color.RED);
                 }
             }
         });
-
         miBotonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 cont++;
-                if (cont==1) {
-                    pregunta.setText(StringConst.pregunta1);
-                } else if (cont==2) {
-                    pregunta.setText(StringConst.pregunta2);
-                } else if (cont==3) {
-                    pregunta.setText(StringConst.pregunta3);
+                if (cont == 5) {
+                    Intent intent = new Intent(MainActivity.this, Resultado.class);
+                    startActivity(intent);
+                    finish();
                 } else {
-                    pregunta.setText(StringConst.pregunta4);
+                    if (cont == 2) {
+                        pregunta.setText(StringConst.pregunta2);
+                        miBotonA.setText(StringConst.respuesta2A);
+                        miBotonB.setText(StringConst.respuesta2B);
+                        miBotonC.setText(StringConst.respuesta2C);
+                        miBotonD.setText(StringConst.respuesta2D);
+                        miImagen.setImageResource(R.drawable.fiatlux);
+
+                    } else if (cont == 3) {
+                        pregunta.setText(StringConst.pregunta3);
+                        miBotonA.setText(StringConst.respuesta3A);
+                        miBotonB.setText(StringConst.respuesta3B);
+                        miBotonC.setText(StringConst.respuesta3C);
+                        miBotonD.setText(StringConst.respuesta3D);
+                        miImagen.setImageResource(R.drawable.tabacalera);
+                    } else if (cont == 4) {
+                        pregunta.setText(StringConst.pregunta4);
+                        miBotonA.setText(StringConst.respuesta4A);
+                        miBotonB.setText(StringConst.respuesta4B);
+                        miBotonC.setText(StringConst.respuesta4C);
+                        miBotonD.setText(StringConst.respuesta4D);
+                        miImagen.setImageResource(R.drawable.pisos);
+                    }
+                    miBotonA.setBackgroundColor(Color.BLACK);
+                    miBotonB.setBackgroundColor(Color.BLACK);
+                    miBotonC.setBackgroundColor(Color.BLACK);
+                    miBotonD.setBackgroundColor(Color.BLACK);
                 }
-                miBotonA.setBackgroundColor(Color.BLACK);
-                miBotonB.setBackgroundColor(Color.BLACK);
-                miBotonC.setBackgroundColor(Color.BLACK);
-                miBotonD.setBackgroundColor(Color.BLACK);
             }
         });
 
+    }
+
+    public static int getRes() {
+        return res;
     }
 }

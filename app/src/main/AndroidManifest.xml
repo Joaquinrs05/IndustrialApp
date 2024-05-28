@@ -30,6 +30,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.Informacion"></activity>
+
+        <activity
+            android:name=".view.Resultado"
+            android:exported="true">
+        </activity>
+
     </application>
+
+
 
 </manifest>
