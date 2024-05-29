@@ -5,7 +5,7 @@ public class StringConst {
 
     public static String respuesta1A = "1934";
     public static String respuesta1B = "1923";
-    public static String respuesta1C = "2024";
+    public static String respuesta1C = "Cuando chema se rompio el tobillo";
     public static String respuesta1D = "1987";
 
     public static String pregunta2 = "¿Qué protección tiene la fabrica de electricidad FiatLux?";
